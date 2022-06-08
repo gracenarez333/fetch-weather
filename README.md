@@ -17,6 +17,8 @@ Let's use our new-found react skills to create a weather app!
 
 - [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 
+- You can also install and use [axios](https://www.npmjs.com/package/axios) as well
+
 Time to show off! You're going to display the weather on your app.
 
 You'll use the OpenWeather API to fetch weather information from a certain zip code and update your blog to display the current weather.
@@ -52,7 +54,7 @@ On your `Weather` page, ask the user to input a zip code.
 
 Here is a functional Weather component starter:
 
-```js
+```jsx
 import { Component } from 'react';
 
 class Weather extends Component {
@@ -99,16 +101,25 @@ export default Weather;
 **Need a Hint or Two?**
 
 <details>
-    <summary>Hint 1</summary> 
+  <summary>Hint 1</summary>
+  <br />
+  Don't forget to `event.preventDefualt()` when your form submits to stop the page from refreshing 
+</details>
+
+<details>
+    <summary>Hint 2</summary> 
     <br />
     You'll only need to create and implement the `Weather` component.
 </details>
-<details>
-  <summary>Hint 2</summary>
-  <br />
-  The `value` of your text fields need to be 'controlled' in your components state
+
 <details>
   <summary>Hint 3</summary>
+  <br />
+  The `value` of your text fields need to be 'controlled' in your components state
+</details>
+
+<details>
+  <summary>Hint 4</summary>
   <br />
   The temperature reading comes in units of Kelvin by default - check the API for the `units` parameter to get the reading in Farenheit or Celcius
 </details>
