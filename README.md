@@ -1,124 +1,70 @@
-## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Fetch the Weather
+# Getting Started with Create React App
 
-Let's use our new-found react skills to create a weather app!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**You will need:**
+## Available Scripts
 
-* Fetch (built-in to JavaScript) or axios (3rd party, remember to `npm install axios`)
-* Create forms that store data with local state
+In the project directory, you can run:
 
-## Implement the Fetch API
+### `npm start`
 
-**Resources**:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- [OpenWeather API](http://openweathermap.org/current)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- [OpenWeather API Documentation](http://openweathermap.org/current)
+### `npm test`
 
-- [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Time to show off! You're going to display the weather on your app.
+### `npm run build`
 
-You'll use the OpenWeather API to fetch weather information from a certain zip code and update your blog to display the current weather.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Solution
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-At the end of this exercise, your solution will look something like what's shown here.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-<img src="https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png" class="responsive" />
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
----
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Requirements
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Make a new component called `Weather`.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-On your `Weather` page, ask the user to input a zip code.
+## Learn More
 
-- You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
-  - When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Use the response from the API to display the current temperature, the high and low temperatures, the current weather description, and the name of the city.
-  - Note: Our solution uses Fahrenheit. You're free to use Celsius or Kelvins if you'd like.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-**Important Notes**:
+### Code Splitting
 
-- Because the OpenWeather API is not an open API, every request must end with this API key:  `&appid=052f26926ae9784c2d677ca7bc5dec98`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- As an example, this is a URL to which you might send a `fetch()` request: `http://api.openweathermap.org/data/2.5/weather?zip=60614,us&appid=052f26926ae9784c2d677ca7bc5dec98`.
+### Analyzing the Bundle Size
 
-### Skeleton Code (Starter)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Here is a functional Weather component starter:
+### Making a Progressive Web App
 
-```js
-import { Component } from 'react';
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-class Weather extends Component {
-  state = {
-    // Your required states here
-  }
+### Advanced Configuration
 
-  handleChange = (event) => {
-    this.setState({ zipcode: event.target.value }, () => {
-      console.log('Your zip code is', this.state.zipcode);
-    });
-  }
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-  handleSubmit = (event) => {
-    // Your fetch call here
-    // Your state updates go under function(json)
-  }
+### Deployment
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="zipcode">Please enter your zip code for the weather:</label>
-          <input 
-            id="zipcode" 
-            type="text" 
-            onChange={this.handleChange} 
-          />
-          <input type="submit" value="Get my forecast!" />
-        </form>
-        <div>
-          { /* Display weather information here */}
-        </div>
-      </div>
-    )
-  }
-}
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `npm run build` fails to minify
 
-export default Weather;
-```
-
-
-**Need a Hint or Two?**
-
-<details>
-    <summary>Hint 1</summary> 
-    <br />
-    You'll only need to create and implement the `Weather` component.
-</details>
-<details>
-  <summary>Hint 2</summary>
-  <br />
-  The `value` of your text fields need to be 'controlled' in your components state
-</details>
-<details>
-  <summary>Hint 3</summary>
-  <br />
-  The temperature reading comes in units of Kelvin by default - check the API for the `units` parameter to get the reading in Farenheit or Celcius
-</details>
-
-## Bonus
-
-Here are some extra ideas to challenge yourself if you have time:
-
-* Icons make every weather app come to life! There's a good way to do this - hunt around in the returned JSON for a recommended icon.
-* Spend a little time styling the page. Try to get it close to the example image above!
-* Make your current weather into a 5-day forecast
-* Make a `Use current location` button so the user can click that instead of providing the location.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
